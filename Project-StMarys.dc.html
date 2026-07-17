@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#f5f1e8;font-family:'Work Sans',sans-serif}
+  a{color:#a05a34}
+  a:hover{color:#7e4526}
+  .ph{background:repeating-linear-gradient(135deg,#e4ded3,#e4ded3 10px,#dcd4c5 10px,#dcd4c5 20px);display:flex;align-items:center;justify-content:center;color:rgba(36,31,26,.4);font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.03em;text-transform:uppercase}
+</style>
+</helmet>
+
+<div style="max-width:900px;margin:0 auto;background:#f5f1e8">
+
+  <div style="padding:56px 64px 0">
+    <a href="Home.dc.html" style="font:500 12px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;text-decoration:none">← Back to work</a>
+  </div>
+
+  <div style="padding:40px 64px 56px">
+    <div style="font:500 12px/1 'Work Sans';letter-spacing:.14em;text-transform:uppercase;color:#a05a34;margin-bottom:20px">Project 02</div>
+    <div style="font:500 52px/1.08 'Source Serif 4';color:#241f1a;max-width:640px">St Marys Town Park Precinct</div>
+    <div style="margin-top:22px;font:400 14px/1.7 'Work Sans';color:rgba(36,31,26,.6)">
+      Urban Design Studio (ARCH9002) &nbsp;·&nbsp; Team of 3 &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; Guide: Prof. Denna Ridenour
+    </div>
+  </div>
+
+  <div style="margin:0 64px;height:420px;overflow:hidden"><img src="images/stmarys-hero.jpg" alt="St Marys Town Park Precinct render" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+
+  <div style="padding:56px 64px 0;display:grid;grid-template-columns:1fr 2fr;gap:48px">
+    <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45)">Aim of the Project</div>
+    <div style="font: 400 18px/1.7 'Source Serif 4'; color: #241f1a; max-width: 560px; text-align: justify">
+      To design a town precinct proposal for St Marys in response to Council's proposal with respect to the newly proposed metro station.
+    </div>
+  </div>
+
+  <div style="padding:56px 64px 0">
+    <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45);margin-bottom:20px">Regional Context</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+      <div onClick="{{ selectLayer }}" data-i="0" style="{{ layerStyle0 }}">Public Domain</div>
+      <div onClick="{{ selectLayer }}" data-i="1" style="{{ layerStyle1 }}">Building Footprints</div>
+      <div onClick="{{ selectLayer }}" data-i="2" style="{{ layerStyle2 }}">Building Types</div>
+      <div onClick="{{ selectLayer }}" data-i="3" style="{{ layerStyle3 }}">Ground Floor Uses</div>
+      <div onClick="{{ selectLayer }}" data-i="4" style="{{ layerStyle4 }}">Opportunities + Constraints</div>
+    </div>
+    <img src="{{ layerImage }}" alt="{{ layerAlt }}" style="width:100%;height:auto;display:block">
+  </div>
+
+  <div style="padding:56px 64px 0;width:767px">
+    <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45);margin-bottom:24px">EXISTING SITE SECTIONS</div>
+
+    <div style="position:relative">
+      <div id="es-scroll" style="display: flex; gap: 44px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; padding-right: 70px; scrollbar-width: none; width: 676px; height: 313px; position: relative">
+
+        
+
+        <div style="flex: none; scroll-snap-align: start; width: 731px; position: relative">
+          <img src="images/stmarys-section-aa.jpg" alt="Existing site — Section AA" style="width: 746px; height: 134px; display: block">
+          <div style="margin-top:14px;font:400 14px/1.6 'Work Sans';color:#241f1a"><strong style="font-weight:600">SECTION AA</strong> — a low-rise commercial and office frontage along Queen Street backs onto a large outdoor parking lot along East Lane.</div>
+        <div onClick="{{ scrollEsNext }}" style="position: absolute; top: 204px; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: #a05a34; color: #f5f1e8; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(36,31,26,.25); font: 500 18px/1 'Work Sans'; left: 694px">→</div></div><div style="flex: none; scroll-snap-align: start; width: 731px; position: relative">
+          <img src="images/stmarys-section-bb.jpg" alt="Existing site — Section BB" style="width:100%;height:auto;display:block">
+          <div style="margin-top:14px;font:400 14px/1.6 'Work Sans';color:#241f1a"><strong style="font-weight:600">SECTION BB</strong> — a six-storey residential building over ground-floor bank and retail rises above an at-grade parking lot along Carinya Ave.</div>
+        </div>
+
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div style="padding:56px 64px 0;width:762px">
+    <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45);margin-bottom:24px">VISION AND PRICIPLES</div>
+    <div style="border-left:3px solid #a05a34;padding:20px 28px">
+      <div style="font:400 15px/1.7 'Work Sans';color:#241f1a;text-align:justify;font-size:14px">The proposal for St Marys Town Park Precinct forms its foundation in the need to create a <strong style="font-weight:600">vibrant, accessible, and connected</strong> town park precinct that will strengthen the local community's sense of place and belonging.</div>
+    </div>
+  </div>
+
+  <div style="padding: 32px 64px 0; position: relative">
+    <div style="display:grid;grid-template-columns:68% 1px 32%;gap:0 28px;align-items:start">
+
+      <!-- LEFT 68% — 3D massing with principle markers -->
+      <div style="position:relative">
+        <img src="images/stmarys-site-3d-base.jpg" alt="St Marys Town Park Precinct — 3D massing with principles" style="width:100%;height:auto;display:block">
+
+        <div onClick="{{ selectPrinciple }}" data-i="0" style="position: absolute; left: 14.8%; top: 38.5%; width: 92px; height: 41px; border: 2px dashed #d92b2b; cursor: pointer"></div>
+        <div onClick="{{ selectPrinciple }}" data-i="0" style="position: absolute; left: 77px; top: 54px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A">Principle 1</div>
+
+        <div onClick="{{ selectPrinciple }}" data-i="1" style="position:absolute;left:35.4%;top:31.2%;width:14.8%;height:22.9%;border:2px dashed #d92b2b;cursor:pointer"></div>
+        <div onClick="{{ selectPrinciple }}" data-i="1" style="position: absolute; left: 186px; top: 41px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A">Principle 2</div>
+
+        <div onClick="{{ selectPrinciple }}" data-i="2" style="position: absolute; left: 259px; top: 16px; width: 9.6%; height: 11.4%; border: 2px dashed #d92b2b; cursor: pointer"></div>
+        
+
+        <div onClick="{{ selectPrinciple }}" data-i="3" style="position:absolute;left:58.3%;top:38.5%;width:13.7%;height:17.7%;border:2px dashed #d92b2b;cursor:pointer"></div>
+        <div onClick="{{ selectPrinciple }}" data-i="3" style="position: absolute; left: 306px; top: 55px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A; white-space: nowrap">Principle 4</div>
+
+        <div onClick="{{ selectPrinciple }}" data-i="4" style="position: absolute; left: 78.2%; top: 48.9%; width: 101px; height: 67px; border: 2px dashed #d92b2b; cursor: pointer"></div>
+        <div onClick="{{ selectPrinciple }}" data-i="4" style="position: absolute; left: 413px; top: 73px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A; white-space: nowrap">Principle 5</div>
+      <div onClick="{{ selectPrinciple }}" data-i="2" style="position: absolute; left: 260px; top: -2px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A; white-space: nowrap">Principle 3</div></div>
+
+      <!-- DIVIDER -->
+      <div style="width:1px;background:rgba(36,31,26,.14);align-self:stretch"></div>
+
+      <!-- RIGHT 32% — principle popup -->
+      <div>
+        <sc-if value="{{ hasSelectedPrinciple }}" hint-placeholder-val="{{ false }}">
+          <sc-if value="{{ principleHasImage }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ principleImage }}" alt="{{ principleAlt }}" style="width:100%;height:auto;display:block">
+          </sc-if>
+          <sc-if value="{{ principleNoImage }}" hint-placeholder-val="{{ false }}">
+            <div class="ph" style="height:200px">{{ principleTitle }} visual</div>
+          </sc-if>
+          <div style="margin-top:16px;font:600 13px/1.3 'Work Sans';color:#241f1a;font-style:italic">{{ principleTitle }}</div>
+          <div style="margin-top:6px;font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.75);font-style:italic">{{ principleText }}</div>
+        </sc-if>
+        <sc-if value="{{ hasNoPrinciple }}" hint-placeholder-val="{{ true }}">
+          <div style="font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.45);font-style:italic">Select a principle on the model to view.</div>
+        </sc-if>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="padding: 56px 64px 0; width: 767px; height: 172px">
+    <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45);margin-bottom:24px">Key Moves — Site &amp; Context</div>
+
+    <div style="position:relative">
+      <div id="km-scroll" style="display: flex; gap: 44px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; padding-right: 70px; scrollbar-width: none; position: relative; width: 704px; height: 170px">
+
+        <div style="flex: none; display: flex; align-items: center; gap: 28px; scroll-snap-align: start; width: 731px; height: 174px; position: relative">
+          
+          <img src="images/stmarys-km-1.png" alt="Key move 01 diagram" style="width: 285px; height: auto; display: block; flex: none">
+          <div style="width:464px;font:400 14px/1.6 'Work Sans';color:#241f1a">
+            <div style="font-weight:600;letter-spacing:.02em">1. QUEEN STREET – BUILT FORM OUTCOMES</div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:16px;height:9px;background:#e0574a;margin-top:5px;display:block"></span><span>Street wall edge along Queen Street. Mixed uses to maintain and enhance viability of Queen Street.</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;color:#e0574a;font-weight:700">*</span><span>Higher building heights at key corners act as markers to key destinations.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:none;display:flex;align-items:center;gap:28px;scroll-snap-align:start;width:731px;height:174px">
+          <img src="images/stmarys-km-2.png" alt="Key move 02 diagram" style="width:285px;height:auto;display:block;flex:none">
+          <div style="width:464px;font:400 14px/1.6 'Work Sans';color:#241f1a">
+            <div style="font-weight:600;letter-spacing:.02em">2. CENTRAL TOWN PARK</div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; color: #000000; font-weight: 700; margin-top: 1px; width: 24px; height: 23px">↔</span><span>Interface with civic space</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; width: 23px; color: #e0a12f; font-weight: 700; letter-spacing: -1px; margin-top: 1px; height: 23px">⋯&gt;</span><span>Built form edges to promote safety with views to park</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; width: 24px; height: 8px; background: #e0574a; margin-top: 5px; display: block"></span><span>Ground floor activation</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; width: 25px; color: #7b7fd6; font-weight: 700; letter-spacing: -1px; margin-top: 1px; height: 21px">⋯&gt;</span><span style="width: 335px; height: 47px">Desire lines to draw people towards park<br>Sightlines</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:none;display:flex;align-items:center;gap:28px;scroll-snap-align:start;width:731px;height:174px">
+          <img src="images/stmarys-km-3.png" alt="Key move 03 diagram" style="width: 285px; height: auto; display: block; flex: none; object-fit: cover; overflow: visible">
+          <div style="width:464px;font:400 14px/1.6 'Work Sans';color:#241f1a">
+            <div style="font-weight:600;letter-spacing:.02em">3. ENHANCED COMMUNITY</div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; color: #e0574a; font-weight: 700; margin-top: 1px; width: 23px; height: 22px">↔</span><span>Extend Crana Street to create direct sightlines between Queen Street and Shopping Centre.</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; width: 23px; color: #3a6ede; font-weight: 700; letter-spacing: -1px; margin-top: 1px; height: 21px">⋯&gt;</span><span>Public pedestrian only thoroughfare<br>St Marys Shopping Centre</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:none;display:flex;align-items:center;gap:28px;scroll-snap-align:start;width:731px;height:174px">
+          <img src="images/stmarys-km-4.png" alt="Key move 04 diagram" style="width:285px;height:auto;display:block;flex:none">
+          <div style="width:464px;font:400 14px/1.6 'Work Sans';color:#241f1a">
+            <div style="font-weight:600;letter-spacing:.02em">4. STREET + BLOCK PATTERNS</div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; width: 19px; color: #3a6ede; font-weight: 700; letter-spacing: -1px; margin-top: 1px; height: 22px">⋯&gt;</span><span style="width: 370px; height: 65px">Improve permeability and connectivity<br>Mid-block pedestrian connections enables permeability activation</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; color: #241f1a; font-weight: 700; margin-top: 1px; width: 20px; height: 20px">◀</span><span>Maintain laneways for service and vehicle access</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex: none; width: 20px; height: 9px; background: #e0574a; margin-top: 5px; display: block"></span><span>Built form edges to laneways for activation and passive surveillance</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:none;display:flex;align-items:center;gap:28px;scroll-snap-align:start;width:731px;height:174px">
+          <img src="images/stmarys-km-5.png" alt="Key move 05 diagram" style="width:285px;height:auto;display:block;flex:none">
+          <div style="width:464px;font:400 14px/1.6 'Work Sans';color:#241f1a">
+            <div style="font-weight:600;letter-spacing:.02em">5. Pocket Parks + Small Public Spaces</div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;color:#e0574a;font-weight:700;letter-spacing:-1px;margin-top:1px">→</span><span>Public pocket parks / public spaces / plazas / landscaped settings between blocks.</span></div>
+              <div style="display:flex;gap:10px;align-items:flex-start"><span style="flex:none;width:16px;height:9px;background:#9fc5a8;margin-top:5px;display:block"></span><span>Landscaped courtyards within blocks.</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div onClick="{{ scrollKmNext }}" style="position:absolute;top:50%;right:0;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#a05a34;color:#f5f1e8;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(36,31,26,.25);font:500 18px/1 'Work Sans'">→</div>
+    </div>
+  </div>
+
+  <div style="padding:56px 64px 0">
+    <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45);margin-bottom:24px">Proposed Plan and Section</div>
+    <div style="position:relative">
+      <img src="images/stmarys-proposed-plan-section.jpg" alt="St Marys Town Park Precinct — proposed plan and section" style="width:100%;height:auto;display:block">
+
+      <div onClick="{{ selectLocation }}" data-i="0" style="position: absolute; left: 252px; top: 222px; width: 49px; height: 33px; border: 2px dashed #d92b2b; cursor: pointer"></div>
+      <div onClick="{{ selectLocation }}" data-i="0" style="position: absolute; left: 251px; top: 208px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A">4</div>
+
+      <div onClick="{{ selectLocation }}" data-i="1" style="position:absolute;left:65%;top:44%;width:6%;height:9%;border:2px dashed #d92b2b;cursor:pointer"></div>
+      <div onClick="{{ selectLocation }}" data-i="1" style="position: absolute; left: 489px; top: 254px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A">3</div>
+
+      <div onClick="{{ selectLocation }}" data-i="2" style="position:absolute;left:75%;top:20%;width:6%;height:9%;border:2px dashed #d92b2b;cursor:pointer"></div>
+      <div onClick="{{ selectLocation }}" data-i="2" style="position: absolute; left: 571px; top: 103px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A">5</div>
+
+      <div onClick="{{ selectLocation }}" data-i="3" style="position: absolute; left: 354px; top: 99px; width: 105px; height: 150px; border: 2px dashed #d92b2b; cursor: pointer"></div>
+      <div onClick="{{ selectLocation }}" data-i="3" style="position: absolute; left: 351px; top: 81px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A">1</div>
+
+      <div onClick="{{ selectLocation }}" data-i="4" style="position: absolute; left: 391px; top: 63px; width: 68px; height: 55px; border: 2px dashed #d92b2b; cursor: pointer"></div>
+      <div onClick="{{ selectLocation }}" data-i="4" style="position: absolute; left: 391px; top: 44px; cursor: pointer; font: 600 13px/1.2 'Work Sans'; color: #000000; padding: 2px 6px; font-weight: 500; font-size: 11px; background-color: #F8F8F87A">2</div>
+    </div>
+
+    <sc-if value="{{ hasNoLocation }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top: 16px; font: 400 14px/1.6 'Work Sans'; color: #00000073; font-style: italic; font-weight: 600">Select a numbered location on the plan to view details.</div>
+    </sc-if>
+
+    <div style="margin-top:56px">
+      <sc-if value="{{ isTownPark }}" hint-placeholder-val="{{ false }}">
+        <div style="font:600 13px/1.3 'Work Sans';color:#241f1a;margin-bottom:20px">1. Town Park</div>
+        <div style="display:grid;grid-template-columns:22% 34% 44%;gap:0 28px;align-items:start">
+
+          <img src="images/stmarys-tp-plan.png" alt="Town Park — key plan" style="width:100%;height:auto;display:block;border:1px solid rgba(36,31,26,.12)">
+
+          <div>
+            <img src="images/stmarys-tp-section-ab.png" alt="Town Park — Section AB" style="width:100%;height:auto;display:block">
+            <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Section AB</div>
+            <img src="images/stmarys-tp-section-xy.png" alt="Town Park — Section XY" style="width:100%;height:auto;display:block;margin-top:24px">
+            <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Section XY</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:20px 20px">
+            <div>
+              <img src="images/stmarys-tp-photo-a.png" alt="A — sandpit with kids play area" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:400 12px/1.5 'Work Sans';color:rgba(36,31,26,.75)"><strong style="font-weight:600">A</strong> — Sandpit with kids play area, seating for surveillance</div>
+            </div>
+            <div>
+              <img src="images/stmarys-tp-photo-c.png" alt="C — playing courts for kids and adults" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:400 12px/1.5 'Work Sans';color:rgba(36,31,26,.75)"><strong style="font-weight:600">C</strong> — Playing courts for kids and adults</div>
+            </div>
+            <div>
+              <img src="images/stmarys-tp-photo-b.png" alt="B — hard and soft cover hang-out zones" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:400 12px/1.5 'Work Sans';color:rgba(36,31,26,.75)"><strong style="font-weight:600">B</strong> — Hard and soft cover, hang-out zones</div>
+            </div>
+            <div>
+              <img src="images/stmarys-tp-photo-d.png" alt="D — barbeque areas with distributed seating" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:400 12px/1.5 'Work Sans';color:rgba(36,31,26,.75)"><strong style="font-weight:600">D</strong> — Barbeque areas with distributed seating</div>
+            </div>
+          </div>
+
+        </div>
+      </sc-if>
+      <sc-if value="{{ isCoachmanPark }}" hint-placeholder-val="{{ false }}">
+        <div style="font:600 13px/1.3 'Work Sans';color:#241f1a;margin-bottom:20px">2. Coachman Park</div>
+        <div style="display:grid;grid-template-columns:22% 30% 40%;gap:0 28px;align-items:start">
+
+          <img src="images/stmarys-cp-plan.png" alt="Coachman Park — key plan" style="width: 185px; height: 212px; display: block; border: 1px solid rgba(36,31,26,.12)">
+
+          <div>
+            <img src="images/stmarys-cp-section-xy.png" alt="Coachman Park — Section XY" style="width:100%;height:150px;object-fit:cover;display:block">
+            <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Section XY</div>
+            <div style="margin-top:20px">
+              <img src="images/stmarys-cp-photo-a.png" alt="A — open performance / gathering space" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:400 12px/1.5 'Work Sans';color:rgba(36,31,26,.75)"><strong style="font-weight:600">A</strong> — Open performance/gathering space</div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div>
+              <img src="images/stmarys-cp-photo-b.png" alt="B — focal point inviting towards itself" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:400 12px/1.5 'Work Sans';color:rgba(36,31,26,.75)"><strong style="font-weight:600">B</strong> — Focal point inviting towards itself</div>
+            </div>
+            <div>
+              <img src="images/stmarys-cp-photo-c.png" alt="C — sufficient vegetative and active buffers" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:400 12px/1.5 'Work Sans';color:rgba(36,31,26,.75)"><strong style="font-weight:600">C</strong> — Sufficient vegetative and active buffers</div>
+            </div>
+          </div>
+
+        </div>
+      </sc-if>
+      <sc-if value="{{ isQueenStreet }}" hint-placeholder-val="{{ false }}">
+        <div style="font:600 13px/1.3 'Work Sans';color:#241f1a;margin-bottom:20px">3. Queen Street</div>
+        <div style="display:grid;grid-template-columns:22% 78%;gap:0 28px;align-items:start">
+
+          <img src="images/stmarys-qs-plan.png" alt="Queen Street — key plan" style="width:100%;height:auto;display:block;border:1px solid rgba(36,31,26,.12)">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 28px">
+            <div>
+              <img src="images/stmarys-qs-elev-a.png" alt="Elevation along A" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Elevation along A</div>
+            </div>
+            <div>
+              <img src="images/stmarys-qs-view-a.png" alt="View along A" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">View along A</div>
+            </div>
+            <div>
+              <img src="images/stmarys-qs-elev-b.png" alt="Elevation along B" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Elevation along B</div>
+            </div>
+            <div>
+              <img src="images/stmarys-qs-view-b.png" alt="View along B" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">View along B</div>
+            </div>
+          </div>
+
+        </div>
+      </sc-if>
+      <sc-if value="{{ isShoppingCenter }}" hint-placeholder-val="{{ false }}">
+        <div style="font:600 13px/1.3 'Work Sans';color:#241f1a;margin-bottom:20px">4. Towards West Lane</div>
+        <div style="display:grid;grid-template-columns:22% 78%;gap:0 28px;align-items:start">
+
+          <img src="images/stmarys-sm-plan.png" alt="St Marys Shopping Center — key plan" style="width:100%;height:auto;display:block;border:1px solid rgba(36,31,26,.12)">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 28px">
+            <div>
+              <img src="images/stmarys-sm-section-ab.png" alt="Section AB" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Section AB</div>
+            </div>
+            <div>
+              <img src="images/stmarys-sm-view-ab.png" alt="View at AB" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">View at AB</div>
+            </div>
+            <div>
+              <img src="images/stmarys-sm-section-xy.png" alt="Section XY" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Section XY</div>
+            </div>
+            <div>
+              <img src="images/stmarys-sm-view-xy.png" alt="View at XY" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">View at XY</div>
+            </div>
+          </div>
+
+        </div>
+      </sc-if>
+      <sc-if value="{{ isChapelStreet }}" hint-placeholder-val="{{ false }}">
+        <div style="font:600 13px/1.3 'Work Sans';color:#241f1a;margin-bottom:20px">5. Towards East Lane<br></div>
+        <div style="display:grid;grid-template-columns:154px 1fr;gap:0 16px;align-items:start">
+
+          <img src="images/stmarys-cs-plan.png" alt="Chapel Street — key plan" style="width: 154px; height: 232px; display: block; border: 1px solid rgba(36,31,26,.12)">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:150px 150px;gap:20px">
+            <div>
+              <img src="images/stmarys-el-section-xy.jpg" alt="Section XY" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Section XY</div>
+            </div>
+            <div>
+              <img src="images/stmarys-el-elevation.jpg" alt="Longitudinal elevation" style="width:100%;height:150px;object-fit:cover;display:block">
+              <div style="margin-top:8px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:rgba(36,31,26,.45)">Longitudinal Elevation</div>
+            </div>
+            <img src="images/stmarys-el-view-1.jpg" alt="View along Chapel Street laneway" style="width:100%;height:150px;object-fit:cover;display:block">
+            <img src="images/stmarys-el-view-2.jpg" alt="View along Chapel Street laneway, alternate angle" style="width:100%;height:150px;object-fit:cover;display:block">
+          </div>
+
+          <div style="grid-column:2;margin-top:20px;font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.75)">The priority on fostering east west connections aimed to create inviting laneways off of the main street for both pedestrians and cyclists with adequate engagement and breaks along the length to the end of the block.</div>
+
+        </div>
+      </sc-if>
+      <sc-if value="{{ hasSelectedLocation }}" hint-placeholder-val="{{ false }}">
+        <div style="font:600 13px/1.3 'Work Sans';color:#241f1a">{{ locationTitle }}</div>
+        <div style="margin-top:6px;font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.75)">{{ locationText }}</div>
+      </sc-if>
+    </div>
+
+    <div style="margin-top:56px">
+      <div style="font:600 13px/1.3 'Work Sans';color:#241f1a;margin-bottom:20px">Queen Street - The High Street&nbsp;</div>
+      <div style="display: flex; gap: 32px; align-items: flex-start; width: 774px; height: 515px">
+
+        <img src="images/stmarys-hs-composite.png" alt="The High Street — key plan with referenced views" style="height: 488px; width: 451px; display: block; flex: none">
+        <div style="position:relative;height:488px;flex:1">
+          <div style="position:absolute;top:16%;left:0;right:0;transform:translateY(-50%);font:400 13px/1.55 'Work Sans';color:rgba(36,31,26,.75)">Kerb parking creates pockets along the sidewalk for street trees and furniture.</div>
+          <div style="position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);font:400 13px/1.55 'Work Sans';color:rgba(36,31,26,.75)">Furniture and vegetation are arranged for cafes and eateries, alternating rest with activity.</div>
+          <div style="position:absolute;top:83%;left:0;right:0;transform:translateY(-50%);font:400 13px/1.55 'Work Sans';color:rgba(36,31,26,.75)">Crossings get a vegetative buffer, forming a shared zone for movement across the street.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  
+
+  <div style="padding:0 64px 70px;border-top:1px solid rgba(36,31,26,.12);margin:0 64px">
+    <div style="padding-top:32px;display:flex;justify-content:space-between;align-items:center">
+      <div style="font:400 13px 'Work Sans';color:rgba(36,31,26,.5)">Next project</div>
+      <a href="Project-HSR.dc.html" style="font:500 20px 'Source Serif 4';text-decoration:none">High Speed Rail — Strathfield →</a>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { layer: 0, principle: null, location: null };
+
+  principles = [
+    { title: "Principle 1", text: "Develop strong east-west pedestrian connections", img: "images/stmarys-principle-1.jpg", alt: "Principle 1 — east-west pedestrian connection render" },
+    { title: "Principle 2", text: "Strengthen community and sense of place around the Town park", img: "images/stmarys-principle-2.jpg", alt: "Principle 2 — Town park render" },
+    { title: "Principle 3", text: "Reinforce the public realm", img: "images/stmarys-principle-3.jpg", alt: "Principle 3 — public realm render" },
+    { title: "Principle 4", text: "Improve viability of Queen St (increased residential use to increase patronage)", img: "images/stmarys-principle-4.jpg", alt: "Principle 4 — Queen St render" },
+    { title: "Principle 5", text: "Increase climate resilience - sustainable blue and green infrastructure", img: "images/stmarys-principle-5.jpg", alt: "Principle 5 — climate resilience plan" },
+  ];
+
+  layers = [
+    { name: "Public Domain", img: "images/stmarys-public-domain.jpg", alt: "St Marys Town Park Precinct — public domain analysis" },
+    { name: "Building Footprints", img: "images/stmarys-building-footprints.jpg", alt: "St Marys Town Park Precinct — building footprints analysis" },
+    { name: "Building Types", img: "images/stmarys-building-types.jpg", alt: "St Marys Town Park Precinct — building types analysis" },
+    { name: "Ground Floor Uses", img: "images/stmarys-ground-floor-uses.jpg", alt: "St Marys Town Park Precinct — ground floor uses analysis" },
+    { name: "Opportunities + Constraints", img: "images/stmarys-opportunities-constraints.jpg", alt: "St Marys Town Park Precinct — opportunities and constraints analysis" },
+  ];
+
+  locations = [
+    { title: "5 — Carinya Ave / West Lane", text: "Detail placeholder — add description for this location." },
+    { title: "3 — Queen Street", text: "Detail placeholder — add description for this location." },
+    { title: "5. Chapel Street", text: "Detail placeholder — add description for this location." },
+    { title: "1. Town Park", text: "Detail placeholder — add description for this location." },
+    { title: "2 — Coachman Park Block", text: "Detail placeholder — add description for this location." },
+  ];
+
+  baseChip = "cursor:pointer;padding:8px 16px;border-radius:999px;font:500 13px 'Work Sans';border:1px solid rgba(36,31,26,.18);color:#241f1a;background:transparent;transition:background .15s,color .15s";
+  activeChip = "cursor:pointer;padding:8px 16px;border-radius:999px;font:500 13px 'Work Sans';border:1px solid #a05a34;color:#f5f1e8;background:#a05a34";
+
+  renderVals() {
+    const { layer } = this.state;
+    const vals = {
+      layerImage: this.layers[layer].img,
+      layerAlt: this.layers[layer].alt,
+      selectLayer: (e) => this.setState({ layer: Number(e.currentTarget.dataset.i) }),
+    };
+    this.layers.forEach((l, i) => {
+      vals[`layerStyle${i}`] = i === layer ? this.activeChip : this.baseChip;
+    });
+    vals.scrollEsNext = () => {
+      const el = document.getElementById('es-scroll');
+      if (el) el.scrollBy({ left: 368, behavior: 'smooth' });
+    };
+    vals.scrollKmNext = () => {
+      const el = document.getElementById('km-scroll');
+      if (el) el.scrollBy({ left: 775, behavior: 'smooth' });
+    };
+
+    const { principle } = this.state;
+    const p = principle !== null ? this.principles[principle] : null;
+    vals.selectPrinciple = (e) => this.setState({ principle: Number(e.currentTarget.dataset.i) });
+    vals.hasSelectedPrinciple = !!p;
+    vals.hasNoPrinciple = !p;
+    vals.principleImage = p ? p.img : "";
+    vals.principleAlt = p ? p.alt : "";
+    vals.principleTitle = p ? p.title : "";
+    vals.principleText = p ? p.text : "";
+    vals.principleHasImage = !!(p && p.img);
+    vals.principleNoImage = !!(p && !p.img);
+
+    const { location } = this.state;
+    const loc = location !== null ? this.locations[location] : null;
+    vals.selectLocation = (e) => this.setState({ location: Number(e.currentTarget.dataset.i) });
+    vals.hasSelectedLocation = !!loc && location !== 3 && location !== 4 && location !== 1 && location !== 0 && location !== 2;
+    vals.hasNoLocation = !loc;
+    vals.locationTitle = loc ? loc.title : "";
+    vals.locationText = loc ? loc.text : "";
+    vals.isTownPark = location === 3;
+    vals.isCoachmanPark = location === 4;
+    vals.isQueenStreet = location === 1;
+    vals.isShoppingCenter = location === 0;
+    vals.isChapelStreet = location === 2;
+
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

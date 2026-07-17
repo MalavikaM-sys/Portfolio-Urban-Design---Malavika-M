@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#f5f1e8">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f5f1e8"/>
+    <text x="600" y="360" font-family="Georgia,serif" font-size="72" fill="#241f1a" text-anchor="middle">Malavika</text>
+    <text x="600" y="440" font-family="Georgia,serif" font-size="72" fill="#241f1a" text-anchor="middle">Muralidharan</text>
+    <rect x="500" y="480" width="200" height="4" fill="#a05a34"/>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#f5f1e8;font-family:'Work Sans',sans-serif}
+  a{color:#a05a34}
+  a:hover{color:#7e4526}
+  .row{display:grid;grid-template-columns:64px 220px 1fr;gap:24px;align-items:center;padding:26px 0;border-top:1px solid rgba(36,31,26,.12);text-decoration:none;color:inherit}
+  .ph{background:repeating-linear-gradient(135deg,#e4ded3,#e4ded3 10px,#dcd4c5 10px,#dcd4c5 20px);display:flex;align-items:center;justify-content:center;color:rgba(36,31,26,.4);font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.03em;text-transform:uppercase}
+</style>
+</helmet>
+
+<div style="max-width:900px;margin:0 auto;background:#f5f1e8">
+
+  <div style="padding:110px 64px 76px">
+    <div style="font:500 12px/1 'Work Sans';letter-spacing:.14em;text-transform:uppercase;color:#a05a34;margin-bottom:22px">Design Portfolio</div>
+    <div style="font:500 68px/1.05 'Source Serif 4';color:#241f1a;max-width:600px">Malavika Muralidharan</div>
+    <div style="margin-top:22px;font:400 16px/1.6 'Work Sans';color:rgba(36,31,26,.65);max-width:460px">Master of Urbanism (Urban Design) — University of Sydney, 2023–2025</div>
+  </div>
+
+  <div style="height:1px;background:rgba(36,31,26,.12);margin:0 64px"></div>
+
+  <div style="padding:60px 64px 70px;display:grid;grid-template-columns:200px 1fr;gap:44px;align-items:start">
+    <div style="width:200px;height:200px;border-radius:100px;overflow:hidden;flex:none"><img src="images/headshot.jpg" alt="Malavika Muralidharan" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    <div>
+      <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45);margin-bottom:16px">About</div>
+      <div style="font:400 18px/1.7 'Source Serif 4';color:#241f1a;max-width:560px;margin-bottom:26px">I'm an urbanist who enjoys projects with an obvious constraint - a rail line, a river edge, a leftover lot - and likes to explore turning it into a reason people want to be there. Poke a topic below to see what makes me tick.</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <div onClick="{{ selectChip }}" data-i="0" style="{{ chipStyle0 }}">🚋 Transit-oriented design</div>
+        <div onClick="{{ selectChip }}" data-i="1" style="{{ chipStyle1 }}">🌊 Waterfronts &amp; edges</div>
+        <div onClick="{{ selectChip }}" data-i="2" style="{{ chipStyle2 }}">🌳 Public space</div>
+        <div onClick="{{ selectChip }}" data-i="3" style="{{ chipStyle3 }}">🗺️ Mapping &amp; strategy</div>
+      </div>
+      <div style="margin-top:18px;font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.7);min-height:44px;border-left:2px solid #a05a34;padding-left:16px">{{ chipDescription }}</div>
+    </div>
+  </div>
+
+  <div style="height:1px;background:rgba(36,31,26,.12);margin:0 64px"></div>
+
+  <div style="padding:52px 64px 90px">
+    <div style="font:500 11px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45);margin-bottom:8px">Selected Work</div>
+
+    <a class="row" href="Project-Rydalmere.dc.html" style="border-bottom:1px solid rgba(36,31,26,.12)">
+      <div style="font:400 15px 'Source Serif 4';color:rgba(36,31,26,.4)">01</div>
+      <div style="width:220px;height:140px;overflow:hidden;flex:none"><img src="images/rydalmere-hero.png" alt="Rydalmere Waterfront" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div>
+        <div style="font:500 26px 'Source Serif 4';color:#241f1a;margin-bottom:8px">Rydalmere Waterfront</div>
+        <div style="font:400 13px/1.5 'Work Sans';color:rgba(36,31,26,.6)">Urban Design Studio: Urban Precinct · ARCH9001 · Team of 4 · 2024 · Guide: Prof. Tanya Vincent</div>
+        <div style="font:400 14px/1.5 'Work Sans';color:rgba(36,31,26,.75);margin-top:10px;max-width:440px">Envisioning the Rydalmere Precinct in response to Stage 2 of the Parramatta Light Rail, activating the waterfront along its industrial and residential edges.</div>
+      </div>
+    </a>
+
+    <a class="row" href="Project-StMarys.dc.html" style="border-bottom:1px solid rgba(36,31,26,.12)">
+      <div style="font:400 15px 'Source Serif 4';color:rgba(36,31,26,.4)">02</div>
+      <div style="width:220px;height:140px;overflow:hidden;flex:none"><img src="images/stmarys-hero.png" alt="St Marys Town Park Precinct" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div>
+        <div style="font:500 26px 'Source Serif 4';color:#241f1a;margin-bottom:8px">St Marys Town Park Precinct</div>
+        <div style="font:400 13px/1.5 'Work Sans';color:rgba(36,31,26,.6)">Urban Design Studio · ARCH9002 · Team of 3 · 2024 · Guide: Prof. Denna Ridenour</div>
+        <div style="font:400 14px/1.5 'Work Sans';color:rgba(36,31,26,.75);margin-top:10px;max-width:440px">A town precinct proposal for St Marys, responding to Council's plans for the newly proposed metro station.</div>
+      </div>
+    </a>
+
+    <a class="row" href="Project-HSR.dc.html" style="border-bottom:1px solid rgba(36,31,26,.12)">
+      <div style="font:400 15px 'Source Serif 4';color:rgba(36,31,26,.4)">03</div>
+      <div style="width:220px;height:140px;overflow:hidden;flex:none"><img src="images/hsr-hero.png" alt="High Speed Rail — Strathfield" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div>
+        <div style="font:500 26px 'Source Serif 4';color:#241f1a;margin-bottom:8px">High Speed Rail — Syd/Mel (Strathfield)</div>
+        <div style="font:400 13px/1.5 'Work Sans';color:rgba(36,31,26,.6)">Integrated Urbanism Studio · ARCH9063 · Team of 5 · 2024 · Guides: Prof. Deena Ridenour &amp; Prof. Ian Woodcock</div>
+        <div style="font:400 14px/1.5 'Work Sans';color:rgba(36,31,26,.75);margin-top:10px;max-width:440px">Establishing the strategic context for High Speed Rail between Sydney and Melbourne, with a focus on developing Strathfield Centre as a stop along the line.</div>
+      </div>
+    </a>
+  </div>
+
+  <div style="padding:0 64px 70px">
+    <div style="font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.55)">Get in touch — <a href="mailto:malavika13579@gmail.com" style="text-decoration:underline">malavika13579@gmail.com</a></div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { chip: 0 };
+
+  chips = [
+    "Designing around future light rail and metro stops - figuring out what a station precinct owes the street.",
+    "Industrial and residential waterfronts are usually fenced off from each other. I like re-stitching them.",
+    "Parks, plazas, community centres - the shared rooms of a neighbourhood, and who actually uses them. Inspired by my interest in the book Death and Life of Great American Cities.",
+    "Before any masterplan: reading the strategic context, the constraints, the players who'll shape the outcome."
+  ];
+
+  baseChip = "cursor:pointer;padding:8px 16px;border-radius:999px;font:500 13px 'Work Sans';border:1px solid rgba(36,31,26,.18);color:#241f1a;background:transparent;transition:background .15s,color .15s";
+  activeChip = "cursor:pointer;padding:8px 16px;border-radius:999px;font:500 13px 'Work Sans';border:1px solid #a05a34;color:#f5f1e8;background:#a05a34";
+
+  renderVals() {
+    const { chip } = this.state;
+    return {
+      chipDescription: this.chips[chip],
+      selectChip: (e) => this.setState({ chip: Number(e.currentTarget.dataset.i) }),
+      chipStyle0: chip === 0 ? this.activeChip : this.baseChip,
+      chipStyle1: chip === 1 ? this.activeChip : this.baseChip,
+      chipStyle2: chip === 2 ? this.activeChip : this.baseChip,
+      chipStyle3: chip === 3 ? this.activeChip : this.baseChip,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

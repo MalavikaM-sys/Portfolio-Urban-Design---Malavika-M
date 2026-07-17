@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#f5f1e8;font-family:'Work Sans',sans-serif}
+  a{color:{{ accent }}}
+  a:hover{color:#7e4526}
+  .ph{background:repeating-linear-gradient(135deg,#e4ded3,#e4ded3 10px,#dcd4c5 10px,#dcd4c5 20px);display:flex;align-items:center;justify-content:center;color:rgba(36,31,26,.4);font:500 11px/1.5 ui-monospace,Menlo,monospace;letter-spacing:.03em;text-transform:uppercase;text-align:center;padding:12px;box-sizing:border-box}
+  .lbl{font:500 12px/1 'Work Sans';letter-spacing:.12em;text-transform:uppercase;color:rgba(36,31,26,.45)}
+  .cap{font:400 13px/1.6 'Work Sans';color:rgba(36,31,26,.7)}
+  .card{border:1px solid rgba(36,31,26,.14);border-radius:4px;padding:20px 22px}
+</style>
+</helmet>
+
+<div style="max-width:900px;margin:0 auto;background:#f5f1e8">
+
+  <div style="padding:{{ sectionPad }}">
+    <a href="Home.dc.html" style="font:500 12px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;text-decoration:none">← Back to work</a>
+  </div>
+
+  <div style="padding:40px 64px 56px">
+    <div style="font:500 12px/1 'Work Sans';letter-spacing:.14em;text-transform:uppercase;color:{{ accent }};margin-bottom:20px">Project 03</div>
+    <div style="font:500 52px/1.08 'Source Serif 4';color:#241f1a;max-width:700px">High Speed Rail — Sydney to Melbourne (Strathfield)</div>
+    <div style="margin-top:22px;font:400 14px/1.7 'Work Sans';color:rgba(36,31,26,.6)">
+      Integrated Urbanism Studio (ARCH 9063) &nbsp;·&nbsp; Team of 5 &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; University of Sydney
+    </div>
+    <div style="margin-top:6px;font:400 italic 14px/1.7 'Work Sans';color:rgba(36,31,26,.6)">
+      Guide: Prof. Deena Ridenour and Prof. Ian Woodcock &nbsp;·&nbsp; Location: Sydney, Australia
+    </div>
+  </div>
+
+  <div style="margin:0 64px;height:{{ heroHeight }};overflow:hidden;border-radius:{{ heroRadius }}">
+    <img src="./arial---perspective---arch-9093---adp-gr-mriqud1o.jpg" alt="Strathfield — existing context and proposed built form, aerial perspective" style="width:100%;height:100%;object-fit:cover;display:block">
+  </div>
+
+  <div style="padding:{{ sectionPad }};display:grid;grid-template-columns:1fr 2fr;gap:48px">
+    <div class="lbl">Aim of the Project</div>
+    <div style="font:400 18px/1.7 'Source Serif 4';color:#241f1a;max-width:600px;text-align:justify">
+      To establish the strategic context for High-Speed Rail between Sydney and Melbourne and the stations along the line, with a focus on the development of Strathfield Centre as a stop along the corridor.
+    </div>
+  </div>
+
+  <!-- ===================== REGIONAL CONTEXT ===================== -->
+  <div style="padding:{{ sectionPad }}">
+    <div class="lbl" style="margin-bottom:20px">Regional Context — Defining the Stations as Transport Hubs</div>
+    <div style="font:400 15px/1.7 'Work Sans';color:#241f1a;max-width:740px;text-align:justify;margin-bottom:24px">The intention is to define the stations as key transport hubs, enhancing regional connectivity and facilitating economic growth along the High-Speed Rail corridor. The integration of multi-modal transport networks, supporting seamless movement between metropolitan and regional centres. This is intended to make the network stronger and more widely accessible.</div>
+
+    <div style="display:grid;grid-template-columns:38% 60%;gap:0 28px;align-items:start;margin-bottom:28px">
+      <div style="{{ hierarchyWrapStyle }}">
+        <img src="images/hsr-hierarchy-diagram.png" alt="Hierarchy of connectivity — inter-city, centre-to-region, and local connectivity roles of HSR" style="width: 329px; height: 121px">
+      </div>
+      <div style="font:400 13px/1.7 'Work Sans';color:rgba(36,31,26,.75)">
+        <div><strong style="font-weight: 600;">Inter-city connectivity</strong>&nbsp;- connecting central business districts along the Sydney–Melbourne corridor.</div>
+        <div style="margin-top:10px"><strong style="font-weight: 600;">Centre-to-region connectivity</strong>&nbsp;- the role of HSR in linking regional centres back to the metropolitan spine.</div>
+        <div style="margin-top:10px"><strong style="font-weight: 600;">Local connectivity</strong>&nbsp;- through regional centres and out to local-centre services.</div>
+      </div>
+    </div>
+
+    <img src="images/regional-network-multimodal.png" style="width: 100%; height: auto; display: block">
+
+    <div style="margin-top:16px">
+      
+      <div class="cap" style="margin-top:8px">Travel time between key centres, with a focus on multi-modal connectivity in Strathfield (Transport for NSW, 2023).</div>
+    </div>
+
+    <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+      <sc-for list="{{ regionalPlans }}" as="item">
+        <div class="card" style="border-radius:{{ cardRadius }}">
+          <div style="font:600 13px/1.4 'Work Sans';color:#241f1a">{{ item.name }}</div>
+          <div style="margin-top:10px;font:400 13px/1.6 'Work Sans';color:rgba(36,31,26,.7)">{{ item.goal }}</div>
+          <div style="margin-top:10px;font:500 11px/1 'Work Sans';letter-spacing:.08em;text-transform:uppercase;color:{{ accent }}">Impact on HSR</div>
+          <ul style="margin:8px 0 0;padding-left:18px;font:400 13px/1.6 'Work Sans';color:rgba(36,31,26,.7)">
+            <sc-for list="{{ item.impact }}" as="item"><li>{{ item }}</li></sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ===================== SWOT ===================== -->
+  
+
+  <!-- ===================== VISION FOR CORRIDOR ===================== -->
+  <div style="padding:{{ sectionPad }}">
+    <div class="lbl" style="margin-bottom:20px">SWOT Analysis — Determining the Key Transport Hubs</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+      <div onClick="{{ selectSwot }}" data-i="0" style="{{ swotStyle0 }}">Strengths &amp; Opportunities</div>
+      <div onClick="{{ selectSwot }}" data-i="1" style="{{ swotStyle1 }}">Weaknesses &amp; Threats</div>
+    </div>
+
+    <div class="cap" style="margin-bottom: 14px">Click a numbered marker on the map to reveal its point below.</div>
+
+    <sc-if value="{{ isStrengthsView }}" hint-placeholder-val="{{ true }}">
+      <div style="position:relative;width:100%;aspect-ratio:2264/1587;border:1px solid rgba(36,31,26,.12);background:#fff">
+        
+        <div onClick="{{ markStrength }}" data-idx="0" style="position: absolute; left: 613px; top: 82px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="6" style="position: absolute; left: 735px; top: 54px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="2" style="position: absolute; left: 427px; top: 159px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="3" style="position: absolute; left: 323px; top: 216px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="0" style="position: absolute; left: 522px; top: 174px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="3" style="position: absolute; left: 215px; top: 331px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="1" style="position: absolute; left: 97px; top: 405px; transform: translate(-50%,-50%); border-radius: 50%; cursor: pointer; width: 22px; height: 22px"></div>
+        <div onClick="{{ markStrength }}" data-idx="2" style="position: absolute; left: 161px; top: 393px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="0" style="position: absolute; left: 262px; top: 482px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50px; cursor: pointer; background-color: #241F1A00; overflow: visible"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="2" style="position: absolute; left: 689px; top: 30px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="1" style="position: absolute; left: 712px; top: 42px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="3" style="position: absolute; left: 420px; top: 133px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="1" style="position: absolute; left: 282px; top: 251px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="4" style="position: absolute; left: 430px; top: 213px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="3" style="position: absolute; left: 357px; top: 234px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="2" style="position: absolute; left: 477px; top: 232px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="3" style="position: absolute; left: 211px; top: 301px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="2" style="position: absolute; left: 204px; top: 401px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="7" style="position: absolute; left: 125px; top: 450px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markOpportunity }}" data-idx="2" style="position: absolute; left: 87px; top: 452px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markStrength }}" data-idx="4" style="position: absolute; left: 95.0%; top: 34.7%; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background: #241f1a; color: #f5f1e8; display: flex; align-items: center; justify-content: center; font: 600 12px 'Work Sans'; box-shadow: 0 1px 4px rgba(0,0,0,.3); font-size: 12px">05</div>
+        <div onClick="{{ markStrength }}" data-idx="5" style="position: absolute; left: 734px; top: 218px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background:#241f1a;color:#f5f1e8;display:flex;align-items:center;justify-content:center;font:600 12px 'Work Sans';box-shadow:0 1px 4px rgba(0,0,0,.3)">06</div>
+        <div onClick="{{ markOpportunity }}" data-idx="5" style="position: absolute; left: 734px; top: 248px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background:{{ accent }};color:#f5f1e8;display:flex;align-items:center;justify-content:center;font:600 12px 'Work Sans';box-shadow:0 1px 4px rgba(0,0,0,.3)">06</div>
+        <div onClick="{{ markOpportunity }}" data-idx="6" style="position: absolute; left: 734px; top: 278px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background:{{ accent }};color:#f5f1e8;display:flex;align-items:center;justify-content:center;font:600 12px 'Work Sans';box-shadow:0 1px 4px rgba(0,0,0,.3)">07</div>
+      <img src="images/strengths-opportunities-map.png" alt="Map of strengths and opportunities along the HSR corridor" style="width:100%;height:100%;object-fit:contain;display:block"></div>
+    </sc-if>
+    <sc-if value="{{ isWeaknessView }}" hint-placeholder-val="{{ false }}">
+      <div style="position:relative;width:100%;aspect-ratio:2264/1587;border:1px solid rgba(36,31,26,.12);background:#fff">
+        <img src="images/weaknesses-threats-map.png" alt="Map of weaknesses and threats along the HSR corridor" style="width: 769px; height: 540px; object-fit: contain; display: block">
+        <div onClick="{{ markWeakness }}" data-idx="3" style="position: absolute; left: 718px; top: 39px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markWeakness }}" data-idx="2" style="position: absolute; left: 436px; top: 158px; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div><div onClick="{{ markWeakness }}" data-idx="2" style="position: absolute; left: 703px; top: 74px; width: 22px; height: 22px; cursor: pointer; border-radius: 50px"></div>
+        <div onClick="{{ markWeakness }}" data-idx="3" style="position: absolute; left: 558px; top: 115px; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div><div onClick="{{ markWeakness }}" data-idx="3" style="position: absolute; left: 315px; top: 150px; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markWeakness }}" data-idx="0" style="position: absolute; left: 303px; top: 191px; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background-color: #5B5FA800"></div><div onClick="{{ markWeakness }}" data-idx="0" style="position: absolute; left: 539px; top: 175px; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markWeakness }}" data-idx="3" style="position: absolute; left: 120px; top: 324px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background-color: #5B5FA800"></div>
+        <div onClick="{{ markWeakness }}" data-idx="2" style="position: absolute; left: 190px; top: 342px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background-color: #5B5FA800"></div>
+        <div onClick="{{ markWeakness }}" data-idx="0" style="position: absolute; left: 90px; top: 361px; width: 22px; height: 22px; cursor: pointer; border-radius: 50px"></div>
+        <div onClick="{{ markWeakness }}" data-idx="1" style="position: absolute; left: 730px; top: 220px; transform: translate(-50%,-50%); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; background:#5b5fa8;color:#f5f1e8;display:flex;align-items:center;justify-content:center;font:600 12px 'Work Sans';box-shadow:0 1px 4px rgba(0,0,0,.3)">02</div>
+        <div onClick="{{ markThreat }}" data-idx="5" style="position: absolute; left: 655px; top: 11px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="0" style="position: absolute; left: 648px; top: 34px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="1" style="position: absolute; left: 636px; top: 95px; width: 22px; height: 22px; cursor: pointer; border-radius: 50px"></div>
+        <div onClick="{{ markThreat }}" data-idx="1" style="position: absolute; left: 530px; top: 120px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="0" style="position: absolute; left: 376px; top: 232px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="1" style="position: absolute; left: 315px; top: 265px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background-color: #C0392B00"></div>
+        <div onClick="{{ markThreat }}" data-idx="5" style="position: absolute; left: 513px; top: 264px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="6" style="position: absolute; left: 334px; top: 366px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="3" style="position: absolute; left: 84px; top: 338px; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background-color: #C0392B00"></div><div onClick="{{ markThreat }}" data-idx="3" style="position: absolute; left: 340px; top: 151px; transform: translate(-50%, -50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="0" style="position: absolute; left: 72px; top: 425px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background-color: #C0392B00"></div>
+        <div onClick="{{ markThreat }}" data-idx="1" style="position: absolute; left: 92px; top: 447px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer"></div>
+        <div onClick="{{ markThreat }}" data-idx="5" style="position: absolute; left: 127px; top: 473px; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; cursor: pointer; background-color: #C0392B00"></div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasSwotSelection }}" hint-placeholder-val="{{ false }}">
+      <div class="card" style="border-radius: {{ cardRadius }}; margin-top: 16px; max-width: 600px; width: 600px; height: 51px">
+        <div style="font:600 12px/1 'Work Sans';letter-spacing:.06em;text-transform:uppercase;color:{{ selCategoryColor }};margin-bottom:8px">{{ selCategoryLabel }}</div>
+        <div style="font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.8)">{{ selText }}</div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ hasNoSwotSelection }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:16px;font:400 13px/1.6 'Work Sans';color:rgba(36,31,26,.45);font-style:italic">Select a numbered marker on the map above to view its detail.</div>
+    </sc-if>
+
+    <div style="margin-top:16px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start">
+        <img src="images/swot-criteria-chart.png" alt="SWOT scoring by category — strength, opportunity, weakness, threat" style="width:100%;height:340px;object-fit:contain;object-position:center bottom">
+        <img src="images/swot-station-score-chart.png" alt="Overall SWOT score by station along the corridor" style="width:100%;height:340px;object-fit:contain;object-position:center bottom">
+      </div>
+      <div class="cap" style="margin-top:8px">Station-by-station SWOT scoring along the proposed movement corridor.</div>
+    </div>
+
+    <div style="margin-top:40px">
+      <div class="lbl" style="margin-bottom:16px">Multi-Criteria Evaluation of Stations Against SWOT Parameters</div>
+      <div style="width:100%;font:400 13px/1.5 'Work Sans'">
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;border-bottom:2px solid #241f1a">
+          <div style="text-align:left;padding:8px 10px;font-weight:600">Category</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600;color:#241f1a">Strength</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600;color:{{ accent }}">Opportunity</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600;color:#5b5fa8">Weakness</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600;color:#c0392b">Threat</div>
+        </div>
+        <sc-for list="{{ criteriaRows }}" as="item">
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;border-bottom:1px solid rgba(36,31,26,.1)">
+            <div style="padding:8px 10px">{{ item.name }}</div>
+            <div style="text-align:center;padding:8px 10px">{{ item.s }}</div>
+            <div style="text-align:center;padding:8px 10px">{{ item.o }}</div>
+            <div style="text-align:center;padding:8px 10px">{{ item.w }}</div>
+            <div style="text-align:center;padding:8px 10px">{{ item.t }}</div>
+          </div>
+        </sc-for>
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr">
+          <div style="padding:8px 10px;font-weight:600">Total</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600">7</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600">8</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600">4</div>
+          <div style="text-align:center;padding:8px 10px;font-weight:600">8</div>
+        </div>
+      </div>
+    </div>
+  </div><div style="padding:{{ sectionPad }}">
+    <div class="lbl" style="margin-bottom:20px">Proposed Sydney–Melbourne Corridor and Vision</div>
+    <div style="border-left:3px solid {{ accent }};padding:20px 28px;margin-bottom:28px">
+      <div style="font:400 15px/1.7 'Work Sans';color:#241f1a;text-align:justify">
+        Establish a <strong style="font-weight:600">resilient, multimodal high-speed rail corridor</strong> that enhances inter-city connectivity between Sydney and Melbourne, catalysing the emergence of vibrant, well-connected transport hubs. The corridor will <strong style="font-weight:600">bridge metropolitan centres and regional communities</strong> — ensuring equitable access to employment, education, housing, and services — while enabling compact, sustainable urban development and balanced population growth. The HSR will act as a <strong style="font-weight:600">spine for integrated regional development</strong>, supporting economic diversification and a more liveable and accessible Australia.
+      </div>
+    </div>
+    <img src="./5-series---5000-scale-mrlnu2ak-9zre.png" alt="Proposed Sydney–Melbourne corridor map with station roles along the line" style="width: 100%; height: auto; display: block">
+    <div class="cap" style="margin-top:8px">Strathfield is positioned as the Metropolitan Centre, Strategic Transport Hub and Multimodal Node of the corridor.</div>
+  </div>
+
+  <!-- ===================== EVOLUTION ===================== -->
+  <div style="padding:{{ sectionPad }}">
+    <div class="lbl" style="margin-bottom:8px;font:600 22px/1.3 'Work Sans';text-transform:none;letter-spacing:0;color:#241f1a">Strathfield as a HSR Stop</div>
+    <div class="lbl" style="margin-bottom:20px">EVOLUTION OF STARTHFIELD — URBAN FORM AND DENSITY</div>
+
+    
+
+    <div style="display: grid; grid-template-columns: 70% 28%; gap: 0 2%; align-items: start; margin-bottom: 28px; width: 606px; height: 459px">
+      <div style="position: relative; width: 426px; height: 456px">
+        <img src="images/strathfield-footprint-map.png" alt="Strathfield lot and building footprint map with numbered typology clusters" style="width: 427px; height: 456px; display: block">
+        <sc-for list="{{ typologies }}" as="item">
+          <div onClick="{{ selectTypology }}" data-i="{{ item.i }}" style="position:absolute;left:{{ item.x }}%;top:{{ item.y }}%;transform:translate(-50%,-50%);width:9%;height:9%;cursor:pointer"></div>
+        </sc-for>
+      </div>
+      <div>
+        <sc-if value="{{ hasSelectedTypology }}" hint-placeholder-val="{{ false }}">
+          <div class="card" style="border-radius: {{ cardRadius }}; width: 302px; height: 299px">
+            <sc-if value="{{ isTypology0 }}" hint-placeholder-val="{{ false }}">
+              <img src="images/lot-cluster-1.png" alt="Typology 1 — building, lot and block diagram" style="width:100%;height:auto;display:block;margin-bottom:10px">
+            </sc-if>
+            <sc-if value="{{ isTypology1 }}" hint-placeholder-val="{{ false }}">
+              <img src="images/lot-cluster-2.png" alt="Typology 2 — building, lot and block diagram" style="width:100%;height:auto;display:block;margin-bottom:10px">
+            </sc-if>
+            <sc-if value="{{ isTypology2 }}" hint-placeholder-val="{{ false }}">
+              <img src="images/lot-cluster-3.png" alt="Typology 3 — building, lot and block diagram" style="width:100%;height:auto;display:block;margin-bottom:10px">
+            </sc-if>
+            <sc-if value="{{ isTypology3 }}" hint-placeholder-val="{{ false }}">
+              <img src="images/lot-cluster-4.png" alt="Typology 4 — building, lot and block diagram" style="width:100%;height:auto;display:block;margin-bottom:10px">
+            </sc-if>
+            <div style="font:600 13px/1.3 'Work Sans';color:#241f1a">{{ typologyTitle }}</div>
+            <div style="margin-top:6px;font:400 14px/1.6 'Work Sans';color:rgba(36,31,26,.75)">{{ typologyText }}</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ hasNoTypology }}" hint-placeholder-val="{{ true }}">
+          <div style="font:400 13px/1.6 'Work Sans';color:rgba(36,31,26,.45);font-style:italic">Select a marked lot cluster on the map to view its typology.</div>
+        </sc-if>
+      </div>
+    </div><div class="lbl" style="margin-bottom:4px">Evolution of Land Fragmentation</div>
+    <div class="cap" style="margin-bottom:16px;font-style:italic">Source: Strathfield District Historical Society (n.d.)</div>
+    <div style="position:relative;margin-bottom:40px">
+      <div id="evo-scroll" style="display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;padding-right:70px;scrollbar-width:none">
+        <div style="flex:none;scroll-snap-align:start;width:260px">
+          <img src="images/strathfield-1890.png" alt="Land fragmentation, Strathfield, 1890" style="width:100%;height:320px;object-fit:contain;border:1px solid rgba(36,31,26,.12);background:#fff">
+          <div style="margin-top:10px;font:600 13px/1.4 'Work Sans';color:#241f1a">{{ evolutionMaps.0.year }}</div>
+          <div class="cap" style="margin-top:4px">{{ evolutionMaps.0.note }}</div>
+        </div>
+        <div style="flex:none;scroll-snap-align:start;width:260px">
+          <img src="images/strathfield-1910.png" alt="Land fragmentation, Strathfield, 1910" style="width:100%;height:320px;object-fit:contain;border:1px solid rgba(36,31,26,.12);background:#fff">
+          <div style="margin-top:10px;font:600 13px/1.4 'Work Sans';color:#241f1a">{{ evolutionMaps.1.year }}</div>
+          <div class="cap" style="margin-top:4px">{{ evolutionMaps.1.note }}</div>
+        </div>
+        <div style="flex:none;scroll-snap-align:start;width:260px">
+          <img src="images/strathfield-1985.png" alt="Land fragmentation, Strathfield, 1985" style="width:100%;height:320px;object-fit:contain;border:1px solid rgba(36,31,26,.12);background:#fff">
+          <div style="margin-top:10px;font:600 13px/1.4 'Work Sans';color:#241f1a">{{ evolutionMaps.2.year }}</div>
+          <div class="cap" style="margin-top:4px">{{ evolutionMaps.2.note }}</div>
+        </div>
+      </div>
+      <div onClick="{{ scrollEvoNext }}" style="position:absolute;top:130px;right:0;width:44px;height:44px;border-radius:50%;background:{{ accent }};color:#f5f1e8;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(36,31,26,.25);font:500 16px/1 'Work Sans'">→</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin-bottom:32px">
+      <div>
+        <img src="images/walking-cycling-network.png" alt="Walking and cycling network — 500m / 5-minute catchment" style="width: 342px; height: 352px; object-fit: contain; border: 1px solid rgba(36,31,26,.12); background: #fff">
+        <div class="cap" style="margin-top:8px">Walking and cycling — 500m / 5-minute catchment, with conflict points marked.</div>
+      </div>
+      <div>
+        <img src="images/vehicular-movement-network.png" alt="Vehicular movement network — parking, loading docks, conflict zones" style="width: 342px; height: 352px; object-fit: contain; border: 1px solid rgba(36,31,26,.12); background: #fff">
+        <div class="cap" style="margin-top:8px">Vehicular movement — designated parking, loading docks and conflict zones.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+      <div>
+        <img src="images/site-pedestrian-path.png" style="width:100%;height:150px;object-fit:cover;display:block">
+        <div class="cap" style="margin-top:8px">Through site — pedestrian path, not well lit or maintained.</div>
+      </div>
+      <div>
+        <img src="images/site-pedestrian-crossing.png" style="width:100%;height:150px;object-fit:cover;display:block">
+        <div class="cap" style="margin-top:8px">Inefficient pedestrian crossings at key vehicular junctions — high traffic.</div>
+      </div>
+      <div>
+        <img src="images/site-traffic-congestion.png" style="width:100%;height:150px;object-fit:cover;display:block">
+        <div class="cap" style="margin-top:8px">Congestion of bus, car and pedestrian traffic on the key active street during peak periods.</div>
+      </div>
+      <div>
+        <img src="images/site-surface-parking.png" style="width:100%;height:150px;object-fit:cover;display:block">
+        <div class="cap" style="margin-top:8px">Large areas of lots used for private parking.</div>
+      </div>
+      <div>
+        <img src="images/site-parking-conflict.png" style="width:100%;height:150px;object-fit:cover;display:block">
+        <div class="cap" style="margin-top:8px">Conflict areas created in access to parking.</div>
+      </div>
+      <div>
+        <img src="images/site-train-conflict.png" style="width:100%;height:150px;object-fit:cover;display:block">
+        <div class="cap" style="margin-top:8px">Key conflict area between train passengers, bus, car and pedestrian due to lack of segregation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== VISION, THEMES ===================== -->
+  <div style="padding: {{ sectionPad }}; position: relative">
+    <div class="lbl" style="margin-bottom:16px">Vision, Themes and Strategic Design</div>
+    <div style="font:400 15px/1.7 'Work Sans';color:#241f1a;max-width:780px;text-align:justify;margin-bottom:28px">
+      By 2060, Strathfield will be a <strong style="font-weight:600">seamlessly connected, vibrant urban centre</strong>, positioned at the heart of Greater Sydney's strategic transport network. Anchored by the introduction of High-Speed Rail, it will evolve into a <strong style="font-weight:600">compact, walkable and inclusive district</strong> that offers diverse housing, thriving local businesses, and efficient access to employment and services across the metropolitan and regional corridor. Strathfield will embrace its role as a key interchange — enabling <strong style="font-weight:600">reliable, optimal travel routes</strong> to Sydney, Parramatta and key regional centres — while strengthening its own identity as a <strong style="font-weight:600">resilient, transit-oriented destination</strong> where people live, work, and connect.
+    </div>
+
+    <div style="position:relative;margin-bottom:20px;width:100%;overflow:hidden;background:#fff">
+      <img src="images/vision-and-themes.png" style="display:block;width:100%;height:auto">
+      
+      <div onClick="{{ selectTheme }}" data-i="1" style="position: absolute; left: 173px; top: 376px; width: 34px; height: 34px; border-radius: 50%; background: none; cursor: pointer; box-shadow: 0px 2px 10px 0px #241F1A00; display: flex; align-items: center; justify-content: center; font: 700 15px/1 'Work Sans'; color: #241f1a; transition: transform .15s" style-hover="transform:scale(1.12)">2</div>
+      <div onClick="{{ selectTheme }}" data-i="2" style="position: absolute; left: 347px; top: 228px; width: 34px; height: 34px; border-radius: 50%; background: none; cursor: pointer; box-shadow: 0px 2px 10px 0px #241F1A00; display: flex; align-items: center; justify-content: center; font: 700 15px/1 'Work Sans'; color: #241f1a; transition: transform .15s" style-hover="transform:scale(1.12)">3</div>
+      <div onClick="{{ selectTheme }}" data-i="3" style="position: absolute; left: 718px; top: 425px; width: 34px; height: 34px; border-radius: 50%; background: none; cursor: pointer; box-shadow: 0px 2px 10px 0px #241F1A00; display: flex; align-items: center; justify-content: center; font: 700 15px/1 'Work Sans'; color: #241F1A; transition: transform .15s" style-hover="transform:scale(1.12)">4</div>
+    <div onClick="{{ selectTheme }}" data-i="0" style="position: absolute; left: 551px; top: 454px; width: 34px; height: 34px; border-radius: 50%; background: none; cursor: pointer; box-shadow: 0px 2px 10px 0px #241F1A00; display: flex; align-items: center; justify-content: center; font: 700 15px/1 'Work Sans'; color: #241f1a; transition: transform .15s" style-hover="transform:scale(1.12)">1</div></div>
+    <div style="font: 500 12px/1.4 'Work Sans'; color: rgba(36,31,26,.55); letter-spacing: .03em; margin-bottom: 16px; font-style: italic">Click a marker to view theme details</div>
+
+    <sc-if value="{{ hasSelectedTheme }}" hint-placeholder-val="{{ true }}">
+      <div class="card" style="border-radius:{{ cardRadius }}">
+        <div style="font:600 13px/1.3 'Work Sans';color:{{ accent }};letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">{{ themeTitle }}</div>
+        <ul style="margin:0;padding-left:18px;font:400 14px/1.7 'Work Sans';color:rgba(36,31,26,.8)">
+          <sc-for list="{{ themePoints }}" as="item"><li style="margin-bottom:6px">{{ item }}</li></sc-for>
+        </ul>
+      </div>
+    </sc-if>
+
+    <img src="images/strategic-plan.jpg" style="width:100%;height:auto;display:block;border:1px solid rgba(36,31,26,.12)">
+    <div class="cap" style="margin-top:8px">Strategic plan — proposed light rail stop, land use pattern, and new active walkable commercial catchment.</div>
+  </div>
+
+  <!-- ===================== TRANSPORT NETWORK + LAND USE ===================== -->
+  <div style="padding:{{ sectionPad }}">
+    <div class="lbl" style="margin-bottom:20px">Transport Network and Land Use Pattern</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+      <div onClick="{{ selectTransportLayer }}" data-i="0" style="{{ transportLayerStyle0 }}">Land Use Pattern</div>
+      <div onClick="{{ selectTransportLayer }}" data-i="1" style="{{ transportLayerStyle1 }}">Transport Network</div>
+    </div>
+    <img src="{{ transportLayerSrc }}" style="width:100%;height:auto;display:block;margin-bottom:16px">
+    <div style="display:flex;flex-direction:column;gap:20px;margin-bottom:28px">
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center">
+        <img src="images/land-use-1.png" style="width:100%;height:auto;display:block;border:1px solid rgba(36,31,26,.12)">
+        <div style="font:400 14px/1.7 'Work Sans';color:rgba(36,31,26,.8)">Re-purposing zoning and land use to respond to the upcoming light rail proposed on Parramatta Road. A new road link to the south of the highway can ease the anticipated pressure of inter-modal changes.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center">
+        <img src="images/land-use-2.png" style="width:100%;height:auto;display:block;border:1px solid rgba(36,31,26,.12)">
+        <div style="font:400 14px/1.7 'Work Sans';color:rgba(36,31,26,.8)">Activating the station edge and addressing severance through the design of the HSR stop.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center">
+        <img src="images/land-use-3.png" style="width:100%;height:auto;display:block;border:1px solid rgba(36,31,26,.12)">
+        <div style="font:400 14px/1.7 'Work Sans';color:rgba(36,31,26,.8)">Reorienting traffic edges to get the buffer from high-traffic Redmyre Road — creating an active front for users of public open space and institutional buildings.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== PUBLIC DOMAIN, KEY MOVES ===================== -->
+  <div style="padding:{{ sectionPad }}">
+    <div class="lbl" style="margin-bottom:20px">Public Domain, Key Moves and Future Strategy</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:40px">
+      <div>
+        <img src="images/key-move-1.png" style="width:100%;height:220px;object-fit:cover;display:block;border:1px solid rgba(36,31,26,.12)">
+        <div style="margin-top:10px;font:600 12px/1.5 'Work Sans';color:#241f1a">1. Breaking of Larger Blocks</div>
+        <div class="cap" style="margin-top:4px">Proposed through a system of open and built spaces, with the intention to replicate this in similar scenarios.</div>
+      </div>
+      <div>
+        <img src="images/key-move-2.png" style="width:100%;height:220px;object-fit:cover;display:block;border:1px solid rgba(36,31,26,.12)">
+        <div style="margin-top:10px;font:600 12px/1.5 'Work Sans';color:#241f1a">2–3. Severance and Station Edge Activation</div>
+        <div class="cap" style="margin-top:4px">Addressing severance and the length of the station-linking access from all precincts, within 800m of other transport modes. Commercial directional movement improves walkability and access.</div>
+      </div>
+      <div>
+        <img src="images/key-move-3.png" style="width:100%;height:220px;object-fit:cover;display:block;border:1px solid rgba(36,31,26,.12)">
+        <div style="margin-top:10px;font:600 12px/1.5 'Work Sans';color:#241f1a">4. Education Precinct Active Edge</div>
+        <div class="cap" style="margin-top:4px">The education precinct aims to take the active edge from the busy road and establish safer access to the station precinct.</div>
+      </div>
+    </div>
+
+    <img src="images/section-a-b.png" alt="Section A–B through site — educational, local centre, mixed-use and residential precincts" style="width:100%;height:auto;margin-bottom:12px;display:block">
+    <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+      <sc-for list="{{ precinctZones }}" as="item">
+        
+      </sc-for>
+    </div>
+
+    <img src="images/isometric-masterplan.jpg" alt="Isometric masterplan — retail, office, mixed use, education, residential" style="width:100%;height:auto;display:block">
+    <div class="cap" style="margin-top:8px">Illustrative masterplan for Strathfield - interchange, new plaza, retail and office core, surrounded by education, medical and residential precincts, with future growth extending west.</div>
+  </div>
+
+  <div style="margin-top:56px;padding:32px 64px;background:#241f1a">
+    <div style="font:400 italic 17px/1.6 'Source Serif 4';color:#f5f1e8;max-width:740px">
+      The emerging narrative of this research project highlights High-Speed Rail as a transformative force in reshaping Australia's urban and regional connectivity.
+    </div>
+  </div>
+
+  <div style="padding:0 64px 70px;border-top:1px solid rgba(36,31,26,.12);margin:0 64px">
+    <div style="padding-top:32px;display:flex;justify-content:space-between;align-items:center">
+      <div style="font:400 13px 'Work Sans';color:rgba(36,31,26,.5)">More work</div>
+      <a href="Home.dc.html" style="font:500 20px 'Source Serif 4';text-decoration:none">Back to all projects →</a>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#a05a34&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#a05a34&quot;,&quot;#5b5fa8&quot;,&quot;#4a7856&quot;],&quot;section&quot;:&quot;Feel&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;standard&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;compact&quot;,&quot;standard&quot;,&quot;generous&quot;],&quot;section&quot;:&quot;Feel&quot;},&quot;corners&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;sharp&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;sharp&quot;,&quot;soft&quot;],&quot;section&quot;:&quot;Feel&quot;}}">
+class Component extends DCLogic {
+  state = { regLayer: 0, swot: 0, typology: null, theme: null, precinct: null };
+
+  baseChip = "cursor:pointer;padding:8px 16px;border-radius:999px;font:500 13px 'Work Sans';border:1px solid rgba(36,31,26,.18);color:#241f1a;background:transparent";
+
+  regionalPlans = [
+    { name: "Draft Illawarra–Shoalhaven Regional Transport Plan 2021–2041", goal: "Focuses on transport improvements between Illawarra, Shoalhaven, and Greater Sydney.", impact: ["Reduced need for a southern Sydney stop if regional transport improvements prove effective.", "Potential economic benefits for the Illawarra region through a well-integrated HSR system."] },
+    { name: "Draft South East and Tablelands Regional Transport Plan 2041", goal: "Supports improved transport links between South East NSW and Canberra, focused on sustainability, safety and productivity.", impact: ["Supports improved transport links between South East NSW and Canberra."] },
+    { name: "Melbourne 2030", goal: "Aims to create a more compact, sustainable, well-connected metropolitan region that strengthens regional links and reduces urban sprawl.", impact: ["Aligns with HSR by decentralising economic activity toward regional centres rather than concentrating growth in the CBD.", "Supports sustainability goals by reducing congestion and lowering emissions."] },
+  ];
+
+  strengths = [
+    "Reduced travel times — a fast, reliable alternative to car and inland rail between major cities and regional hubs.",
+    "Multi-modal integration — stations have potential to link existing light rail, bus and road networks.",
+    "Supports freight and logistics — potential to free up existing rail corridors for improved freight movement.",
+    "Potential to act as a multi-direction hub (west and north lines), meaning more connection with the wider area.",
+    "Key stations better connect regional Sydney and Victoria to the CBD, reducing travel times.",
+    "LGA policy priorities align with the NSW Future Transport Strategy 2056 and Greater Sydney Region Plan.",
+    "60% of Strathfield's working-age travel profile is commute or work-related business.",
+  ];
+  opportunities = [
+    "Midway stations (e.g. Albury/Wodonga) may develop into economic hubs — case study: Zaragoza station.",
+    "Midway Syations (Eg. Albury and Wodonga) May develop into economic hubs \n(Ex: Zaragoza Station)",
+    "Can balance and distribute CBD development, reducing dependence and pressure on the CBD.",
+    "Enhances regional cooperation and economic benefits, increasing jobs and real estate value along the route.",
+    "Improves regional connectivity, allowing regional commuters better access to metropolitan job markets.",
+    "Balances modes of transport, reducing pressure on road and air travel through greatly reduced travel times.",
+    "LGA has the opportunity to continuously optimise policy direction in response to community and market needs.",
+    "State government can set up special funds to improve public facilities at transport hubs.",
+  ];
+  weaknesses = [
+    "Station placement constraints — geographic, economic, and political factors may limit ideal placement.",
+    "Challenges of policy coordination and implementation efficiency.",
+    "Interchange and access from stations to air travel is highly restricted.",
+    "Existing policies don't clearly address land, reconstruction and compensation issues, risking community resistance.",
+  ];
+  threats = [
+    "Potential impact of HSR planning on upcoming high-density residential areas for 2041 population densification.",
+    "Transfer routes and interchange points between existing rail and HSR may become too complex, mismanaging commuter traffic.",
+    "HSR's ability to attract sufficient ridership remains uncertain.",
+    "High-density construction may cause protests or social/political conflict from the local community.",
+    "Competition with existing air travel, given ticket cost and shorter travel time by air.",
+    "Dependence on multi-modal connectivity — HSR efficiency relies on the reliability of bus and light rail networks.",
+    "Inland Rail conflicts — shared corridors impose additional burdens, especially scheduling and capacity issues in the CBD.",
+  ];
+  criteriaRows = [
+    { name: "Policy and Plans", s: 1, o: 2, w: 2, t: 2 },
+    { name: "Demographic", s: 1, o: 1, w: 0, t: 1 },
+    { name: "Transport", s: 5, o: 2, w: 1, t: 3 },
+    { name: "Business and Economic", s: 0, o: 3, w: 1, t: 2 },
+  ];
+
+  typologies = [
+    { i: 0, x: 60.3, y: 30.5 },
+    { i: 1, x: 69.9, y: 44 },
+    { i: 2, x: 55.2, y: 54.5 },
+    { i: 3, x: 20.8, y: 57.5 },
+  ];
+  typologyData = [
+    { title: "1. Residential Lots — Multi Dwellings", text: "Long blocks immediately after the station towards the north.", img: "images/lot-cluster-1.png" },
+    { title: "2. Mixed Use, Commercial–Residential", text: "While blocks are long, lot sizes are also bigger to accommodate built form and on-site services like parking.", img: "images/lot-cluster-2.png" },
+    { title: "3. Mixed Use, Commercial–Office", text: "Larger block at the town centre accommodating various levels of active and passive commercial activity.", img: "images/lot-cluster-3.png" },
+    { title: "4. Single Storey Residential", text: "Similar lot sizes with longer blocks, some serviced by an internal lane.", img: "images/lot-cluster-4.png" },
+  ];
+
+  evolutionMaps = [
+    { alt: "Land fragmentation, Strathfield, 1890", year: "1890", note: "Strathfield was the home to the Wangal Aboriginal people ", img: "images/strathfield-1890.png" },
+    { alt: "Land fragmentation, Strathfield, 1910", year: "1910", note: "Progressive subdivision of the original land parcels.", img: "images/strathfield-1910.png" },
+    { alt: "Land fragmentation, Strathfield, 1985", year: "1985", note: "Established street and block pattern largely unchanged since.", img: "images/strathfield-1985.png" },
+  ];
+
+  sitePhotos = [
+    { alt: "Through-site pedestrian path, poorly lit", caption: "Through site — pedestrian path, not well lit or maintained." },
+    { alt: "Inefficient pedestrian crossing at a vehicular junction", caption: "Inefficient pedestrian crossings at key vehicular junctions — high traffic." },
+    { alt: "Traffic congestion on the main active street", caption: "Congestion of bus, car and pedestrian traffic on the key active street during peak periods." },
+    { alt: "Surface parking lot", caption: "Large areas of lots used for private parking." },
+    { alt: "Conflict area around parking access", caption: "Conflict areas created in access to parking." },
+    { alt: "Conflict between train passengers, bus, car and pedestrians", caption: "Key conflict area between train passengers, bus, car and pedestrian due to lack of segregation." },
+  ];
+
+  themes = [
+    { i: 0, n: 1, x: 62, y: 22 },
+    { i: 1, n: 2, x: 22, y: 22 },
+    { i: 2, n: 3, x: 40, y: 22 },
+    { i: 3, n: 4, x: 82, y: 22 },
+  ];
+  themeData = [
+    { title: "Theme 1 — Multimodal Connectivity", points: ["Improve multimodal integration through seamless pedestrian, bicycle, bus and train connections.", "Encourage low-emission transport options and reduce dependence on private vehicles.", "Optimise circulation by addressing congestion points and better managing modal intersections.", "Strengthen regional accessibility through improved HSR linkages and interchange facilities."] },
+    { title: "Theme 2 — Vibrancy and Built Form", points: ["Promote functional diversity and mixed-use activation around Strathfield Station.", "Create a walkable and visually engaging public realm through active frontages and interface improvements.", "Integrate fragmented areas to create a cohesive and socially vibrant urban core.", "Strengthen cultural identity through adaptive reuse and integration of heritage assets."] },
+    { title: "Theme 3 — Urbanisation", points: ["Regenerate underperforming commercial land to support local economic activation and land use efficiency.", "Ensure a transit-supportive density gradient that concentrates population within walkable distance of the HSR.", "Identify and infill underbuilt sites by comparing actual and permitted building heights.", "Enhance diversity in dwelling typologies to support housing choice, demographic mix, and flexible urban growth."] },
+    { title: "Theme 4 — Sustainability and Open Space", points: ["Optimise the layout of small-scale green spaces within residential areas to mitigate the urban heat island effect.", "Establish green corridors to connect fragmented green spaces, enhancing walkability and ecological continuity.", "Expand public open space by introducing a sunken plaza at 'Strathfield Square'.", "Utilise the natural topography to implement Water Sensitive Urban Design (WSUD) strategies such as rainwater harvesting and rain gardens."] },
+  ];
+
+  precincts = [
+    { i: 0, n: 1, x: 30, y: 55 },
+    { i: 1, n: 2, x: 45, y: 40 },
+    { i: 2, n: 3, x: 62, y: 60 },
+  ];
+  precinctData = [
+    "Re-purposing zoning and land use to respond to the upcoming light rail proposed on Parramatta Road. A new road link to the south of the highway can ease the anticipated pressure of inter-modal changes.",
+    "Activating the station edge and addressing severance through the design of the HSR stop.",
+    "Reorienting traffic edges to get the buffer from high-traffic Redmyre Road — creating an active front for users of public open space and institutional buildings.",
+  ];
+
+  keyPatterns = [
+    { alt: "Breaking of larger blocks through open and built spaces", title: "1. Breaking of Larger Blocks", text: "Proposed through a system of open and built spaces, with the intention to replicate this in similar scenarios." },
+    { alt: "Addressing severance and activating the station edge", title: "2–3. Severance and Station Edge Activation", text: "Addressing severance and the length of the station-linking access from all precincts, within 800m of other transport modes. Commercial directional movement improves walkability and access." },
+    { alt: "Education precinct active edge", title: "4. Education Precinct Active Edge", text: "The education precinct aims to take the active edge from the busy road and establish safer access to the station precinct." },
+  ];
+  precinctZones = ["Educational Precinct", "Local Centre Precinct", "Mixed Use Transition Precinct", "Residential Precinct"];
+
+  renderVals() {
+    const vals = {};
+
+    const accent = this.props.accent ?? "#a05a34";
+    const hexToRgb = (hex) => {
+      const h = hex.replace("#", "");
+      const n = parseInt(h.length === 3 ? h.split("").map((c) => c + c).join("") : h, 16);
+      return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+    };
+    vals.accent = accent;
+    vals.accentSoft = `rgba(${hexToRgb(accent)},.85)`;
+    const activeChip = `cursor:pointer;padding:8px 16px;border-radius:999px;font:500 13px 'Work Sans';border:1px solid ${accent};color:#f5f1e8;background:${accent}`;
+
+    const density = this.props.density ?? "standard";
+    const padMap = { compact: "40px 64px 0", standard: "56px 64px 0", generous: "84px 64px 0" };
+    const heroMap = { compact: "320px", standard: "420px", generous: "520px" };
+    vals.sectionPad = padMap[density];
+    vals.heroHeight = heroMap[density];
+
+    const corners = this.props.corners ?? "sharp";
+    vals.heroRadius = corners === "sharp" ? "2px" : "20px";
+    vals.cardRadius = corners === "sharp" ? "4px" : "16px";
+
+    const hAlign = this.props.hierarchyAlign ?? "left";
+    const hJustify = { left: "flex-start", center: "center", right: "flex-end" }[hAlign];
+    vals.hierarchyWrapStyle = `display:flex;justify-content:${hJustify}`;
+    vals.hierarchyImgStyle = hAlign === "left"
+      ? "width:100%;height:auto;display:block"
+      : "width:70%;height:auto;display:block";
+
+    const { regLayer } = this.state;
+    vals.selectRegLayer = (e) => this.setState({ regLayer: Number(e.currentTarget.dataset.i) });
+    vals.regLayerStyle0 = regLayer === 0 ? activeChip : this.baseChip;
+    vals.regLayerStyle1 = regLayer === 1 ? activeChip : this.baseChip;
+    vals.regLayerAlt = regLayer === 0 ? "regional HSR network — Sydney to Melbourne with proposed stations" : "multimodal travel time network around Strathfield";
+    vals.regionalPlans = this.regionalPlans;
+
+    const { transportLayer = 0 } = this.state;
+    vals.selectTransportLayer = (e) => this.setState({ transportLayer: Number(e.currentTarget.dataset.i) });
+    vals.transportLayerStyle0 = transportLayer === 0 ? activeChip : this.baseChip;
+    vals.transportLayerStyle1 = transportLayer === 1 ? activeChip : this.baseChip;
+    vals.transportLayerSrc = transportLayer === 0 ? "images/transport-land-use.png" : "images/transport-network.png";
+
+    const { swot, selType, selIdx } = this.state;
+    vals.selectSwot = (e) => this.setState({ swot: Number(e.currentTarget.dataset.i), selType: null, selIdx: null });
+    vals.markStrength = (e) => this.setState({ selType: "strength", selIdx: Number(e.currentTarget.dataset.idx) });
+    vals.markOpportunity = (e) => this.setState({ selType: "opportunity", selIdx: Number(e.currentTarget.dataset.idx) });
+    vals.markWeakness = (e) => this.setState({ selType: "weakness", selIdx: Number(e.currentTarget.dataset.idx) });
+    vals.markThreat = (e) => this.setState({ selType: "threat", selIdx: Number(e.currentTarget.dataset.idx) });
+    vals.hasSwotSelection = selType !== null && selType !== undefined;
+    vals.hasNoSwotSelection = !vals.hasSwotSelection;
+    const swotSource = { strength: this.strengths, opportunity: this.opportunities, weakness: this.weaknesses, threat: this.threats }[selType];
+    vals.selText = swotSource ? swotSource[selIdx] : "";
+    vals.selCategoryLabel = selType ? selType.charAt(0).toUpperCase() + selType.slice(1) : "";
+    vals.selCategoryColor = { strength: "#241f1a", opportunity: accent, weakness: "#5b5fa8", threat: "#c0392b" }[selType] || "#241f1a";
+    vals.swotStyle0 = swot === 0 ? activeChip : this.baseChip;
+    vals.swotStyle1 = swot === 1 ? activeChip : this.baseChip;
+    vals.isStrengthsView = swot === 0;
+    vals.isWeaknessView = swot === 1;
+    vals.swotAlt = swot === 0 ? "strengths and opportunities mapped along the HSR corridor" : "weaknesses and threats mapped along the HSR corridor";
+    vals.strengths = this.strengths;
+    vals.opportunities = this.opportunities;
+    vals.weaknesses = this.weaknesses;
+    vals.threats = this.threats;
+    vals.criteriaRows = this.criteriaRows;
+
+    const { typology } = this.state;
+    const t = typology !== null ? this.typologyData[typology] : null;
+    vals.typologies = this.typologies;
+    vals.selectTypology = (e) => this.setState({ typology: Number(e.currentTarget.dataset.i) });
+    vals.hasSelectedTypology = !!t;
+    vals.hasNoTypology = !t;
+    vals.typologyTitle = t ? t.title : "";
+    vals.typologyText = t ? t.text : "";
+    vals.typologyImg = t ? t.img : "";
+    vals.hasTypologyImg = !!(t && t.img);
+    vals.isTypology0 = typology === 0;
+    vals.isTypology1 = typology === 1;
+    vals.isTypology2 = typology === 2;
+    vals.isTypology3 = typology === 3;
+
+    vals.evolutionMaps = this.evolutionMaps;
+    vals.scrollEvoNext = () => {
+      const el = document.getElementById('evo-scroll');
+      if (el) el.scrollBy({ left: 292, behavior: 'smooth' });
+    };
+    vals.sitePhotos = this.sitePhotos;
+
+    const { theme } = this.state;
+    const th = theme !== null ? this.themeData[theme] : null;
+    vals.themes = this.themes;
+    vals.selectTheme = (e) => this.setState({ theme: Number(e.currentTarget.dataset.i) });
+    vals.hasSelectedTheme = !!th;
+    vals.themeTitle = th ? th.title : "";
+    vals.themePoints = th ? th.points : [];
+
+    const { precinct } = this.state;
+    vals.precincts = this.precincts;
+    vals.selectPrecinct = (e) => this.setState({ precinct: Number(e.currentTarget.dataset.i) });
+    vals.hasSelectedPrecinct = precinct !== null;
+    vals.hasNoPrecinct = precinct === null;
+    vals.precinctText = precinct !== null ? this.precinctData[precinct] : "";
+
+    vals.keyPatterns = this.keyPatterns;
+    vals.precinctZones = this.precinctZones;
+
+    return vals;
+  }
+}
+
+</script>
+</body>
+</html>
